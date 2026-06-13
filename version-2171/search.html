@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="影视在线影片搜索页面，可按影片名、地区、年份、类型、标签快速查找高清影视内容。">
+  <meta name="keywords" content="影视在线,高清电影,电视剧在线观看,免费影视,在线播放,剧情片,爱情片,动作片,综艺节目,视频播放,影视资源,电影网站,高清视频,影片搜索,影视搜索">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="renderer" content="webkit">
+  <title>影片搜索 - 影视在线</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="影视在线">
+        <span class="brand-mark">影</span>
+        <span class="brand-text">影视在线</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a class="nav-link" href="index.html">首页</a>
+        <a class="nav-link" href="categories.html">分类</a>
+        <a class="nav-link" href="ranking.html">排行榜</a>
+        <a class="nav-link is-active" href="search.html">搜索</a>
+      </nav>
+      <form class="top-search" action="search.html" method="get">
+        <input type="search" name="q" placeholder="搜索影片、类型、地区" aria-label="搜索影片">
+        <button type="submit">搜索</button>
+      </form>
+      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-panel">
+      <form class="mobile-search" action="search.html" method="get">
+        <input type="search" name="q" placeholder="搜索影片">
+        <button type="submit">搜索</button>
+      </form>
+      <div class="mobile-links">
+        <a class="mobile-link" href="index.html">首页</a>
+        <a class="mobile-link" href="categories.html">分类总览</a>
+        <a class="mobile-link" href="ranking.html">排行榜</a>
+        <a class="mobile-link" href="category-drama.html">剧情故事</a>
+        <a class="mobile-link" href="category-action.html">动作冒险</a>
+        <a class="mobile-link" href="category-romance.html">爱情治愈</a>
+        <a class="mobile-link" href="category-suspense.html">悬疑惊悚</a>
+        <a class="mobile-link" href="category-history-war.html">历史战争</a>
+        <a class="mobile-link" href="category-sci-fi.html">科幻奇幻</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero soft-hero search-page-hero">
+      <span class="eyebrow">Search</span>
+      <h1>搜索影片</h1>
+      <p>输入片名、年份、地区、类型或标签，快速找到想看的内容。</p>
+      <form class="hero-search search-main-form" action="search.html" method="get">
+        <input id="search-input" type="search" name="q" placeholder="例如：爱情、二战、悬疑、2026" aria-label="搜索影片">
+        <button type="submit">搜索</button>
+      </form>
+    </section>
+    <section class="section-block search-results-section">
+      <div class="section-heading align-left">
+        <span>搜索结果</span>
+        <h2 id="search-title">影片搜索</h2>
+      </div>
+      <div id="search-results" class="movie-grid"></div>
+    </section>
+    <section class="section-block">
+      <div class="section-heading align-left">
+        <span>推荐浏览</span>
+        <h2>热门精选</h2>
+      </div>
+      <div class="movie-grid">
+        <a class="movie-card" href="movies/movie-0031.html" data-search="身在其中 2026 法国 恐怖/家庭 极端暴力 孕妇 翻拍经典">
+          <span class="poster-frame">
+            <img src="31.jpg" alt="身在其中" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2026</span>
+          </span>
+          <span class="card-body">
+            <strong>身在其中</strong>
+            <em>法国 · 恐怖/家庭</em>
+            <span class="card-line">暴风雪夜,一名临产孕妇被一个自称“助产士”的黑衣女人困在家里,对方只要孩子。</span>
+            <span class="tag-row"><span>极端暴力</span><span>孕妇</span><span>翻拍经典</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0032.html" data-search="历尽沧桑一妇人 1986 中国香港 剧情,家庭,伦理 女性史诗 时代变迁 港风怀旧 母爱无私">
+          <span class="poster-frame">
+            <img src="32.jpg" alt="历尽沧桑一妇人" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">1986</span>
+          </span>
+          <span class="card-body">
+            <strong>历尽沧桑一妇人</strong>
+            <em>中国香港 · 剧情,家庭,伦理</em>
+            <span class="card-line">50年代的庙街妓女,为了养活捡来的四个孤儿,用尽了一生的力气,当她白发苍苍时,孩子们却为了财产将她告上法庭。</span>
+            <span class="tag-row"><span>女性史诗</span><span>时代变迁</span><span>港风怀旧</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0033.html" data-search="百胜铁骑兵 2025 中国大陆 战争/动作/历史 抗战 骑兵连 冷兵器对决 铁血兄弟情">
+          <span class="poster-frame">
+            <img src="33.jpg" alt="百胜铁骑兵" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2025</span>
+          </span>
+          <span class="card-body">
+            <strong>百胜铁骑兵</strong>
+            <em>中国大陆 · 战争/动作/历史</em>
+            <span class="card-line">抗战末期,一支仅剩百余人的残兵骑兵队,为了掩护百姓转移,向日军机械化联队发起了最后一次冲锋。</span>
+            <span class="tag-row"><span>抗战</span><span>骑兵连</span><span>冷兵器对决</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0034.html" data-search="潘朵拉的承诺 2013 英国 纪录片,科学,环保 核能 环保 争议 能源">
+          <span class="poster-frame">
+            <img src="34.jpg" alt="潘朵拉的承诺" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2013</span>
+          </span>
+          <span class="card-body">
+            <strong>潘朵拉的承诺</strong>
+            <em>英国 · 纪录片,科学,环保</em>
+            <span class="card-line">一群环保主义者走进核电站后改变立场,开始为核能正名的纪录片。</span>
+            <span class="tag-row"><span>核能</span><span>环保</span><span>争议</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0035.html" data-search="踉跄的女孩 2018 法国 剧情,心理 女性成长 破碎感 艺术电影">
+          <span class="poster-frame">
+            <img src="35.jpg" alt="踉跄的女孩" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2018</span>
+          </span>
+          <span class="card-body">
+            <strong>踉跄的女孩</strong>
+            <em>法国 · 剧情,心理</em>
+            <span class="card-line">25岁的巴黎女孩在一次意外创伤后,她的身体开始不受控制地“踉跄”,生活也随之失衡。</span>
+            <span class="tag-row"><span>女性成长</span><span>破碎感</span><span>艺术电影</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0036.html" data-search="八千里路 2024 中国大陆 剧情,家庭,公路 回乡 春运 父子 电动车 现实主义">
+          <span class="poster-frame">
+            <img src="36.jpg" alt="八千里路" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2024</span>
+          </span>
+          <span class="card-body">
+            <strong>八千里路</strong>
+            <em>中国大陆 · 剧情,家庭,公路</em>
+            <span class="card-line">为了给城里读书的女儿一个“老家”的承诺,父亲骑着一辆破电动车,跨越八千里从广东骑回四川。</span>
+            <span class="tag-row"><span>回乡</span><span>春运</span><span>父子</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0037.html" data-search="小猪佩奇第五季 2016 英国 动画/儿童 学龄前 家庭 欢乐 简笔画风">
+          <span class="poster-frame">
+            <img src="37.jpg" alt="小猪佩奇第五季" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2016</span>
+          </span>
+          <span class="card-body">
+            <strong>小猪佩奇第五季</strong>
+            <em>英国 · 动画/儿童</em>
+            <span class="card-line">佩奇一家去兔子小姐的太空中心体验月球漫步,乔治的恐龙先生不小心飘进了太空。</span>
+            <span class="tag-row"><span>学龄前</span><span>家庭</span><span>欢乐</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0038.html" data-search="豪登高铁 2016 南非 动作、犯罪、惊悚 劫持 高铁 赎金 倒计时">
+          <span class="poster-frame">
+            <img src="38.jpg" alt="豪登高铁" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2016</span>
+          </span>
+          <span class="card-body">
+            <strong>豪登高铁</strong>
+            <em>南非 · 动作、犯罪、惊悚</em>
+            <span class="card-line">一辆连接机场与约翰内斯堡的豪登高铁被劫持,绑匪要求赎金,否则列车将冲入市中心。</span>
+            <span class="tag-row"><span>劫持</span><span>高铁</span><span>赎金</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0039.html" data-search="八仙过海粤语 2025 香港 奇幻/古装/动作 八仙 粤语 众筹 现代职场">
+          <span class="poster-frame">
+            <img src="39.jpg" alt="八仙过海粤语" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2025</span>
+          </span>
+          <span class="card-body">
+            <strong>八仙过海粤语</strong>
+            <em>香港 · 奇幻/古装/动作</em>
+            <span class="card-line">八位神仙转世成为香港一家广告公司的打工仔,必须用仙术完成KPI才能归位。</span>
+            <span class="tag-row"><span>八仙</span><span>粤语</span><span>众筹</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0040.html" data-search="夏威夷特勤组第一季 2024 美国 动作/犯罪/悬疑 警匪 热带风情 团队作战 高科技 单元剧">
+          <span class="poster-frame">
+            <img src="40.jpg" alt="夏威夷特勤组第一季" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2024</span>
+          </span>
+          <span class="card-body">
+            <strong>夏威夷特勤组第一季</strong>
+            <em>美国 · 动作/犯罪/悬疑</em>
+            <span class="card-line">一支由精英组成的夏威夷特别行动组,在碧海蓝天下,用非常规手段追查那些警方无法解决的重大案件。</span>
+            <span class="tag-row"><span>警匪</span><span>热带风情</span><span>团队作战</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0041.html" data-search="更换心脏:改变世界的手术 2021 日本 科幻,剧情,医疗 器官移植 道德困境 克隆 人心">
+          <span class="poster-frame">
+            <img src="41.jpg" alt="更换心脏:改变世界的手术" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2021</span>
+          </span>
+          <span class="card-body">
+            <strong>更换心脏:改变世界的手术</strong>
+            <em>日本 · 科幻,剧情,医疗</em>
+            <span class="card-line">医生发明永生心脏,移植后患者性格大变,原来心脏保存着原主人的全部记忆。</span>
+            <span class="tag-row"><span>器官移植</span><span>道德困境</span><span>克隆</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0042.html" data-search="我还有话要说 2021 中国台湾 剧情/历史/传记 白色恐怖 政治受难者 口述历史 救赎">
+          <span class="poster-frame">
+            <img src="42.jpg" alt="我还有话要说" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2021</span>
+          </span>
+          <span class="card-body">
+            <strong>我还有话要说</strong>
+            <em>中国台湾 · 剧情/历史/传记</em>
+            <span class="card-line">在“戒严令”解除三十多年后,一位失智老人突然在疗养院喊出一个已被抹去的名字。</span>
+            <span class="tag-row"><span>白色恐怖</span><span>政治受难者</span><span>口述历史</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0043.html" data-search="诅咒录影 2005 日本 恐怖 伪纪录片 诅咒录像带 都市传说 七日索命">
+          <span class="poster-frame">
+            <img src="43.jpg" alt="诅咒录影" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2005</span>
+          </span>
+          <span class="card-body">
+            <strong>诅咒录影</strong>
+            <em>日本 · 恐怖</em>
+            <span class="card-line">二手市场流出一台DV,里面存着七段录像,每一段末尾拍摄者都会离奇死亡。</span>
+            <span class="tag-row"><span>伪纪录片</span><span>诅咒录像带</span><span>都市传说</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0044.html" data-search="猎艳狂 1994 意大利 喜剧,情色 性喜剧 讽刺 意式幽默 偷窥">
+          <span class="poster-frame">
+            <img src="44.jpg" alt="猎艳狂" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">1994</span>
+          </span>
+          <span class="card-body">
+            <strong>猎艳狂</strong>
+            <em>意大利 · 喜剧,情色</em>
+            <span class="card-line">一名患有严重性幻想强迫症的中年男人,每天跟踪女性,却发现自己连搭讪都不敢。</span>
+            <span class="tag-row"><span>性喜剧</span><span>讽刺</span><span>意式幽默</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0045.html" data-search="强盗乐团 2022 德国 喜剧/犯罪/音乐 古典音乐 抢劫 草根逆袭 黑色幽默 交响乐">
+          <span class="poster-frame">
+            <img src="45.jpg" alt="强盗乐团" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2022</span>
+          </span>
+          <span class="card-body">
+            <strong>强盗乐团</strong>
+            <em>德国 · 喜剧/犯罪/音乐</em>
+            <span class="card-line">一群失业的古典乐手为了抗议歌剧院裁员,竟用交响乐配合精密手法抢劫银行。</span>
+            <span class="tag-row"><span>古典音乐</span><span>抢劫</span><span>草根逆袭</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0046.html" data-search="暴走恐怖故事第六季 2026 中国大陆 恐怖/悬疑 单元剧 细思极恐 中式恐怖 反转 成人向">
+          <span class="poster-frame">
+            <img src="46.jpg" alt="暴走恐怖故事第六季" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2026</span>
+          </span>
+          <span class="card-body">
+            <strong>暴走恐怖故事第六季</strong>
+            <em>中国大陆 · 恐怖/悬疑</em>
+            <span class="card-line">老熟人老王回归,这一季他将带我们探访一个全员皆“鬼”的海岛民宿,以及一张会吃掉说话者的诡椅。</span>
+            <span class="tag-row"><span>单元剧</span><span>细思极恐</span><span>中式恐怖</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0047.html" data-search="我爷爷我爸爸 2015 中国 家庭/年代/剧情 三代人 改革开放 父子矛盾 年代跨越">
+          <span class="poster-frame">
+            <img src="47.jpg" alt="我爷爷我爸爸" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2015</span>
+          </span>
+          <span class="card-body">
+            <strong>我爷爷我爸爸</strong>
+            <em>中国 · 家庭/年代/剧情</em>
+            <span class="card-line">爷爷是战斗英雄,爸爸是下岗工人,我是外卖骑手。一台缝纫机,缝了三个时代的三道裂痕。</span>
+            <span class="tag-row"><span>三代人</span><span>改革开放</span><span>父子矛盾</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0048.html" data-search="香港白蔷薇 2024 中国香港 剧情/犯罪/悬疑 港产黑帮 卧底警花 伦理困境 宿命悲剧">
+          <span class="poster-frame">
+            <img src="48.jpg" alt="香港白蔷薇" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2024</span>
+          </span>
+          <span class="card-body">
+            <strong>香港白蔷薇</strong>
+            <em>中国香港 · 剧情/犯罪/悬疑</em>
+            <span class="card-line">女警卧底黑帮成为老大情妇,却在逮捕行动前夜发现自己怀了他的孩子,且自己父亲才是当年灭门真凶。</span>
+            <span class="tag-row"><span>港产黑帮</span><span>卧底警花</span><span>伦理困境</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0049.html" data-search="为你疯狂 1999 中国香港 爱情、喜剧、犯罪 黑色幽默 劫匪 错位爱情">
+          <span class="poster-frame">
+            <img src="49.jpg" alt="为你疯狂" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">1999</span>
+          </span>
+          <span class="card-body">
+            <strong>为你疯狂</strong>
+            <em>中国香港 · 爱情、喜剧、犯罪</em>
+            <span class="card-line">倒霉劫匪绑架了女明星,结果自己反而被她PUA成了恋爱脑。</span>
+            <span class="tag-row"><span>黑色幽默</span><span>劫匪</span><span>错位爱情</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0050.html" data-search="七人的复活 2024 韩国 悬疑,奇幻,惊悚 重生 复仇 七宗罪 密室逃脱 审判">
+          <span class="poster-frame">
+            <img src="50.jpg" alt="七人的复活" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2024</span>
+          </span>
+          <span class="card-body">
+            <strong>七人的复活</strong>
+            <em>韩国 · 悬疑,奇幻,惊悚</em>
+            <span class="card-line">七个罪孽深重的人在一个密闭空间醒来,每人有七次复活机会,最后一次死亡即是终结。</span>
+            <span class="tag-row"><span>重生</span><span>复仇</span><span>七宗罪</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0051.html" data-search="接吻启示录 2025 泰国 爱情/奇幻 校园 预知 诅咒">
+          <span class="poster-frame">
+            <img src="51.jpg" alt="接吻启示录" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2025</span>
+          </span>
+          <span class="card-body">
+            <strong>接吻启示录</strong>
+            <em>泰国 · 爱情/奇幻</em>
+            <span class="card-line">内向少女突然能通过接吻看到对方的死亡画面,她必须吻遍全校来阻止悲剧。</span>
+            <span class="tag-row"><span>校园</span><span>预知</span><span>诅咒</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0052.html" data-search="女教师2022 2022 日本 剧情,心理,惊悚 教师 校园霸凌 复仇 压抑">
+          <span class="poster-frame">
+            <img src="52.jpg" alt="女教师2022" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2022</span>
+          </span>
+          <span class="card-body">
+            <strong>女教师2022</strong>
+            <em>日本 · 剧情,心理,惊悚</em>
+            <span class="card-line">新任女教师发现班上的天才学生长期霸凌同学,她试图阻止,却反被学生设局,一步步陷入身败名裂的深渊。</span>
+            <span class="tag-row"><span>教师</span><span>校园霸凌</span><span>复仇</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0053.html" data-search="没有爱的恋人们 2024 韩国 爱情,都市,喜剧 契约恋爱 社恐 治愈 合租">
+          <span class="poster-frame">
+            <img src="53.jpg" alt="没有爱的恋人们" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2024</span>
+          </span>
+          <span class="card-body">
+            <strong>没有爱的恋人们</strong>
+            <em>韩国 · 爱情,都市,喜剧</em>
+            <span class="card-line">七个因为各种原因无法去爱、也不想结婚的男女,被迫住进一栋专门培养“情侣”的奇怪公寓。</span>
+            <span class="tag-row"><span>契约恋爱</span><span>社恐</span><span>治愈</span></span>
+          </span>
+        </a>
+        <a class="movie-card" href="movies/movie-0054.html" data-search="维和冲锋:绝境求生 2025 中国大陆 动作、战争、剧情 维和部队 枪战 战地救援 主旋律">
+          <span class="poster-frame">
+            <img src="54.jpg" alt="维和冲锋:绝境求生" loading="lazy">
+            <span class="poster-shade"></span>
+            <span class="poster-badge">2025</span>
+          </span>
+          <span class="card-body">
+            <strong>维和冲锋:绝境求生</strong>
+            <em>中国大陆 · 动作、战争、剧情</em>
+            <span class="card-line">一支中国维和医疗队被困交战区,唯一能护送他们撤离的,是一个被所有人误解的狙击手。</span>
+            <span class="tag-row"><span>维和部队</span><span>枪战</span><span>战地救援</span></span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="index.html">
+          <span class="brand-mark">影</span>
+          <span>影视在线</span>
+        </a>
+        <p>影视在线是专业的高清影视内容平台，提供海量电影、电视剧、综艺节目在线观看服务，涵盖剧情片、爱情片、动作片、喜剧片等各类精彩影片，高清流畅播放，为您带来优质的观影体验。</p>
+      </div>
+      <div>
+        <h2>频道导航</h2>
+        <div class="footer-links">
+          <a href="index.html">首页</a>
+          <a href="categories.html">分类总览</a>
+          <a href="ranking.html">排行榜</a>
+          <a href="search.html">影片搜索</a>
+        </div>
+      </div>
+      <div>
+        <h2>热门分类</h2>
+        <div class="footer-links">
+          <a href="category-drama.html">剧情故事</a>
+          <a href="category-action.html">动作冒险</a>
+          <a href="category-romance.html">爱情治愈</a>
+          <a href="category-suspense.html">悬疑惊悚</a>
+          <a href="category-history-war.html">历史战争</a>
+          <a href="category-sci-fi.html">科幻奇幻</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 影视在线. 保留所有权利。</div>
+  </footer>
+  <script src="assets/js/movie-search-data.js" defer></script>
+  <script src="assets/js/search.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?95df08bc498ee0333203841fd6fee1eb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
